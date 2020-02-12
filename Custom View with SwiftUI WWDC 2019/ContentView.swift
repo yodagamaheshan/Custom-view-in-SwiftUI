@@ -20,7 +20,7 @@ struct ContentView: View {
                 Text("5 star")
             }
             
-            VStack {
+            VStack(alignment:.leading) {
                 HStack {
                     Text("Avacado Toast")
                         .font(.title)
