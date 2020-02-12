@@ -28,6 +28,7 @@ struct ContentView: View {
                     Image(systemName: "cloud.bolt.rain.fill")
                 }
                 Text("Ingredient: gjvj hb bhb hb jhb jhb jhb jhb jhbj jhb bjhb jhb jhb jhb hb jhbj hb jhbjhbjhbjhbjhbj bj jhb jhb jhb jhb jhbjhbj hb jhbjhb jhb jhbjh b jhb jbh")
+                    .font(.caption).lineLimit(1)
             }
             
         }
