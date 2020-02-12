@@ -9,6 +9,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isOn: Bool = true
+    var body: some View {
+        VStack {
+            ListCell()
+            Toggle(isOn: $isOn) {
+               Text("")
+            }
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
+struct ListCell: View {
     var body: some View {
         HStack {
             VStack {
@@ -32,11 +50,5 @@ struct ContentView: View {
             }
             
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
