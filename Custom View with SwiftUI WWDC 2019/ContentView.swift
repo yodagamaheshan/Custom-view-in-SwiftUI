@@ -10,7 +10,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        HStack {
+            VStack {
+                HStack {
+                    ForEach(0 ..< 5) { item in
+                        Image(systemName: "star.fill")
+                    }
+                }
+                Text("5 star")
+            }
+            
+            VStack {
+                HStack {
+                    Text("Avacado Toast")
+                        .font(.title)
+                    Spacer()
+                    Image(systemName: "cloud.bolt.rain.fill")
+                }
+                Text("Ingredient: gjvj hb bhb hb jhb jhb jhb jhb jhbj jhb bjhb jhb jhb jhb hb jhbj hb jhbjhbjhbjhbjhbj bj jhb jhb jhb jhb jhbjhbj hb jhbjhb jhb jhbjh b jhb jbh")
+            }
+            
+        }
     }
 }
 
