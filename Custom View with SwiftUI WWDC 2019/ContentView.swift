@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @State var isOn: Bool = true
     var body: some View {
-        VStack {
+        VStack(spacing: 4) {
             ListCell()
             Toggle(isOn: $isOn) {
                Text("")
