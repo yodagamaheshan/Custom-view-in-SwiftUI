@@ -26,13 +26,26 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+extension VerticalAlignment{
+    private enum StarAndAvacadoTitle: AlignmentID {
+        static func defaultValue(in context: ViewDimensions) -> CGFloat {
+            context[.bottom]
+        }
+    }
+    
+
+    static let  midStarAndTitle = VerticalAlignment(StarAndAvacadoTitle.self)
+}
+
 struct ListCell: View {
     var body: some View {
-        HStack {
+        HStack(alignment:.midStarAndTitle) {
             VStack {
                 HStack {
                     ForEach(0 ..< 5) { item in
-                        Image(systemName: "star.fill")
+                        Image(systemName: "star.fill").alignmentGuide(.midStarAndTitle) { (viewDimensions) -> CGFloat in
+                            viewDimensions[.bottom]/2
+                        }
                     }
                 }
                 Text("5 star")
@@ -42,6 +55,9 @@ struct ListCell: View {
                 HStack {
                     Text("Avacado Toast")
                         .font(.title)
+                        .alignmentGuide(.midStarAndTitle) { (viewDimensions) -> CGFloat in
+                            viewDimensions[.bottom]/2
+                    }
                     Spacer()
                     Image(systemName: "cloud.bolt.rain.fill")
                 }
